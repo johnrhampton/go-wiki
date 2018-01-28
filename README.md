@@ -3,7 +3,7 @@
 Super basic [wiki](https://golang.org/doc/articles/wiki/) built with Go
 
 # Run the App
-* Clone this repo
+Clone this repo
 
 ```
 $ cd gowiki
