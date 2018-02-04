@@ -9,6 +9,7 @@ import (
 	"regexp"
 )
 
+const port = "8080"
 const dataDirectory = "data"
 const templatesDirectory = "templates"
 
@@ -90,7 +91,6 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 }
 
 func main() {
-	port := "8080"
 	http.HandleFunc("/view/", makeHandler(viewHandler))
 	http.HandleFunc("/edit/", makeHandler(editHandler))
 	http.HandleFunc("/save/", makeHandler(saveHandler))
