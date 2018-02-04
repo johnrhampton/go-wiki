@@ -9,8 +9,10 @@ import (
 	"regexp"
 )
 
-var dataDirectory = "data"
-var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
+const dataDirectory = "data"
+const templatesDirectory = "templates"
+
+var templates = template.Must(template.ParseFiles(getTemplate("edit"), getTemplate("view")))
 var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")
 
 // Page is a type of page
@@ -28,6 +30,10 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 		}
 		fn(w, r, m[2]) // The title is the second subexpression.
 	}
+}
+
+func getTemplate(title string) string {
+	return path.Join(templatesDirectory, title+".html")
 }
 
 func getFilename(title string) string {
