@@ -100,5 +100,5 @@ func main() {
 }
 
 func init() {
-	fmt.Print("Preparing Wiki")
+	fmt.Print("Wiki")
 }
