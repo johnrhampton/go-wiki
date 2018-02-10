@@ -98,3 +98,7 @@ func main() {
 	fmt.Print("Listening on Port " + port)
 	http.ListenAndServe(":"+port, nil)
 }
+
+func init() {
+	fmt.Print("Preparing Wiki")
+}
